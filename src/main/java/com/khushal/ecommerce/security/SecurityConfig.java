@@ -66,7 +66,7 @@ public class SecurityConfig {
                 .and()
                 .addFilterBefore(rateLimitingFilter, UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .addFilterAfter(requestMetricsFilter, JwtAuthenticationFilter.class);
+                .addFilterAfter(requestMetricsFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
